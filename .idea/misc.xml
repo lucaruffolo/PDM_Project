@@ -3,7 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/drawable/ic_home.xml" value="0.2685" />
+        <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/layout/activity_info.xml" value="0.24909420289855072" />
+        <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/layout/fragment_first.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/layout/fragment_info.xml" value="0.24909420289855072" />
+        <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/layout/fragment_second.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/layout/fragment_third.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/menu/bottom_menu.xml" value="0.3625" />
+        <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/menu/right_menu.xml" value="0.2" />
+        <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/menu/right_switchmode.xml" value="0.3625" />
         <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project2/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project2/app/src/main/res/layout/fragment_first.xml" value="0.2635416666666667" />
         <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project2/app/src/main/res/layout/fragment_second.xml" value="0.2635416666666667" />

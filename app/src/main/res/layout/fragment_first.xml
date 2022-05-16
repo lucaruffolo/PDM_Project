@@ -12,17 +12,17 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textAllenamento"
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/allenamento"
-            tools:textAlignment="center"
-            tools:textSize="60sp" />
+            android:text="Ultimi Allenamenti"
+            android:textAlignment="center"
+            android:textSize="48sp" />
 
         <CalendarView
             android:id="@+id/calendarView"
             android:layout_width="match_parent"
-            android:layout_height="221dp" />
+            android:layout_height="271dp" />
 
         <ImageView
             android:id="@+id/imageView"
