@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/firstFragment" android:title="Home" android:icon="@drawable/ic_home"/>
+    <item android:id="@+id/secondFragment" android:title="Allenamento" android:icon="@drawable/ic_allenamento"/>
+    <item android:id="@+id/thirdFragment" android:title="Statistiche" android:icon="@drawable/ic_statistiche"/>
+</menu>
