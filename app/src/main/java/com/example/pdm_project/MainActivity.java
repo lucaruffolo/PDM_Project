@@ -8,9 +8,11 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.media.metrics.Event;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -39,9 +41,7 @@ public class MainActivity extends AppCompatActivity {
         loadCalendar(calendario);
    }
     public void loadCalendar(CalendarView calendarView){
-        Event ev1 = new Event(Color.RED, 1477040400000L, "Teachers' Professional Day");
 
-        calendarView.add
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -57,13 +57,22 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menuRightMode:
                 if (getDelegate().getLocalNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
                     getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    showMessage("Tema Night impostato!");
+                    showMessage("Tema Light impostato!");
                 } else{
                     getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    showMessage("Tema Light impostato!");
+                    showMessage("Tema Night impostato!");
                 }
                 return true;
             case R.id.menuRightInfo:
+                startActivity(new Intent(MainActivity.this, AboutActivity.class));
+/*
+                new Handler().postDelayed(new Runnable(){
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(MainActivity.this, SplashScreen.class));
+                    }
+                },2000);
+                */
                 showMessage("INFO");
                 return true;
             default:
