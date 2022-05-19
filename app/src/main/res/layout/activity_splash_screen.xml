@@ -4,6 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashScreen">
+    android:background="@color/purple_700"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/biceps"
+        android:layout_width="410dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginEnd="155dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/biceps" />
+
+    <TextView
+        android:id="@+id/textAMG"
+        android:layout_width="366dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="20dp"
+        android:text="AMG"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="80sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/biceps" />
+
+    <TextView
+        android:id="@+id/textM"
+        android:layout_width="20dp"
+        android:layout_height="156dp"
+        android:layout_marginStart="192dp"
+        android:layout_marginTop="4dp"
+        android:text="Y"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textAMG" />
+
+    <TextView
+        android:id="@+id/textA"
+        android:layout_width="20dp"
+        android:layout_height="156dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="4dp"
+        android:text="LL"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textAMG" />
+
+    <TextView
+        android:id="@+id/textG"
+        android:layout_width="30dp"
+        android:layout_height="155dp"
+        android:layout_marginStart="252dp"
+        android:layout_marginTop="4dp"
+
+        android:text="YM"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textAMG" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

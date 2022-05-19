@@ -13,7 +13,7 @@
             android:name=".AboutActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".HomeActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
