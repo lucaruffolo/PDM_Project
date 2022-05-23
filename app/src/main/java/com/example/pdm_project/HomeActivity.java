@@ -13,12 +13,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity{
 
     public CalendarView calendario;
 
@@ -40,6 +41,7 @@ public class HomeActivity extends AppCompatActivity {
     public void loadCalendar(CalendarView calendarView){
 
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -64,6 +66,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, AboutActivity.class));
                 //showMessage("INFO");
                 return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -73,5 +76,6 @@ public class HomeActivity extends AppCompatActivity {
     private void showMessage(String message){
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
+
 
 }

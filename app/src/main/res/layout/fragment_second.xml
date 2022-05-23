@@ -1,15 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SecondFragment">
 
-    <TextView
-        android:id="@+id/textView3"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Allenamento"
-        android:textAlignment="center"
-        android:textSize="60sp" />
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnAllenamentoUno"
+            android:layout_width="382dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="23dp"
+            android:text="Allenamento 1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <Button
+            android:id="@+id/btnAllenamentoDue"
+            android:layout_width="382dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="23dp"
+            android:text="Allenamento 2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAllenamentoUno" />
+
+        <Button
+            android:id="@+id/btnAllenamentoTre"
+            android:layout_width="382dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="23dp"
+            android:text="Allenamento 3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAllenamentoDue" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Allenamento"
+            android:textAlignment="center"
+            android:textSize="60sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnAddAllenamento"
+            android:layout_width="48dp"
+            android:layout_height="49dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="112dp"
+            android:text="+"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>
