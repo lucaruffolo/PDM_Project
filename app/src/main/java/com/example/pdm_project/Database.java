@@ -16,7 +16,15 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase DB) {
-        DB.execSQL("create Table Userdetails(name TEXT primary key, contact TEXT, dob TEXT)");
+        //   DB.execSQL("create Table Userdetails(name TEXT primary key, contact TEXT, dob TEXT)");
+        //  DB.execSQL("create Table Allenamento(nomeallenamento TEXT primary key, allenamenti TEXT, data DATA)");
+
+        /*
+        xx ESEMPIO DB xx:
+        (ID, Gambe, {femorali,polpacci,altro}, 26/05/22)
+        (ID, Petto, {curl,croci,panca}, 28/05/22)
+
+         */
     }
 
     @Override

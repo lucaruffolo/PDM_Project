@@ -23,6 +23,18 @@ public class HomeActivity extends AppCompatActivity{
 
     public CalendarView calendario;
 
+    /*
+    From a Fragment:
+
+    Intent intent = new Intent(getActivity(), mFragmentFavorite.class);
+    startActivity(intent);
+
+    From an Activity
+
+    Intent intent = new Intent(this, mFragmentFavorite.class);
+    startActivity(intent);
+    * */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

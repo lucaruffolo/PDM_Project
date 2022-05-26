@@ -11,32 +11,32 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/btnAllenamentoUno"
-            android:layout_width="382dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="23dp"
-            android:text="Allenamento 1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-        <Button
             android:id="@+id/btnAllenamentoDue"
             android:layout_width="382dp"
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="23dp"
-            android:text="Allenamento 2"
+            android:layout_marginTop="18dp"
+            android:text="Petto + Bicipiti"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnAllenamentoUno" />
+
+        <Button
+            android:id="@+id/btnAllenamentoUno"
+            android:layout_width="382dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="60dp"
+            android:text="Dorso + Tricipiti"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <Button
             android:id="@+id/btnAllenamentoTre"
             android:layout_width="382dp"
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="23dp"
-            android:text="Allenamento 3"
+            android:layout_marginTop="18dp"
+            android:text="Gambe + Deltoidi"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnAllenamentoDue" />
 
@@ -44,7 +44,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Allenamento"
+            android:text="Schede"
             android:textAlignment="center"
             android:textSize="60sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -59,6 +59,27 @@
             android:text="+"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="4dp"
+            android:text="Preimpostate"
+            app:layout_constraintBottom_toTopOf="@+id/btnAllenamentoUno"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="369dp"
+            android:layout_height="76dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="140dp"
+            android:text="Crea un tuo allenamento"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

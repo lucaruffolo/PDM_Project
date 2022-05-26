@@ -17,7 +17,7 @@
         tools:layout="@layout/fragment_second" />
     <fragment
         android:id="@+id/thirdFragment"
-        android:name="com.example.pdm_project.thirdFragment"
+        android:name="com.example.pdm_project.ThirdFragment"
         android:label="Statistiche"
         tools:layout="@layout/fragment_third" />
     <fragment
