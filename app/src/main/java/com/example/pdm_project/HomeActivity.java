@@ -9,19 +9,21 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CalendarView;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity{
-
-    public CalendarView calendario;
 
     /*
     From a Fragment:
@@ -34,25 +36,18 @@ public class HomeActivity extends AppCompatActivity{
     Intent intent = new Intent(this, mFragmentFavorite.class);
     startActivity(intent);
     * */
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
+        setContentView(R.layout.activity_main);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         NavController navController = Navigation.findNavController(this,  R.id.FragmentContainerView);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.firstFragment, R.id.secondFragment, R.id.thirdFragment).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-
-        calendario = findViewById(R.id.calendarView);
-        loadCalendar(calendario);
    }
-    public void loadCalendar(CalendarView calendarView){
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

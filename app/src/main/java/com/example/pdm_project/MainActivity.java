@@ -13,9 +13,9 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
 
-    Animation logoAnim, textAnim, downtextAnim;
-    ImageView image;
-    TextView text, all, my, gym;
+    private Animation logoAnim, textAnim, downtextAnim;
+    private ImageView image;
+    private TextView text, all, my, gym;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, HomeActivity.class));
                 finish();
             }
-        },2000);
+        },2000); //2000
     }
 }

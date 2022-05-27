@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,6 +8,7 @@
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
+        android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -19,16 +21,80 @@
             android:textAlignment="center"
             android:textSize="48sp" />
 
-        <CalendarView
-            android:id="@+id/calendarView"
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scrollbars="none"
+            android:layout_weight="1">
+        <TableLayout
+            android:id="@+id/table"
             android:layout_width="match_parent"
-            android:layout_height="271dp" />
+            android:layout_height="250sp"
+            android:background="@color/white">
+
+            <TableRow
+                android:id="@+id/tablemenu"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:background="@color/purple_700">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="DATA"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="NOME ALLENAMENTO"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:background="@color/gray">
+
+                <TextView
+                    android:id="@+id/coldata"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="DATA"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/colallenamento"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="NOME ALLENAMENTO"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+            </TableRow>
+
+        </TableLayout>
+        </ScrollView>
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="238dp"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:layout_height="wrap_content"
+            android:src="@drawable/abstractlogo" />
 
     </LinearLayout>
 
