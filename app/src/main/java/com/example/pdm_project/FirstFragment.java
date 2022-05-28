@@ -3,8 +3,10 @@ package com.example.pdm_project;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
+import android.text.Layout;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,43 +34,45 @@ public class FirstFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_first, container, false);
         table = (TableLayout) view.findViewById(R.id.table);
-      //  LinearLayout layout = getView().findViewById(R.id.layout);
-       // ViewGroup.LayoutParams params = layout.getLayoutParams();
 
-        for (int i = 0; i<=14; i++){
+        int textColor, backgroundColorOne, backgroundColorTwo;
+
+        if (HomeActivity.NIGHT_MODE){
+            textColor = Color.LTGRAY;
+            backgroundColorOne = Color.BLACK;
+            backgroundColorTwo = Color.rgb(23,0,77);
+        }else{
+            textColor = Color.BLACK;
+            backgroundColorOne = Color.WHITE;
+            backgroundColorTwo = Color.LTGRAY;
+        }
+
+        for (int i = 0; i<=24; i++){
             row = new TableRow(getActivity());
             TextView textData = new TextView(getActivity());
             TextView textAllenamento = new TextView(getActivity());
-
-                /*    android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:gravity="center_horizontal"
-                            android:padding="10sp"
-                            android:text="DATA"
-                            android:textColor="@color/white"
-                            android:textSize="14sp" />*/
             textData.setText("01/01/2022");
-            textData.setTextColor(Color.BLACK);
+            textData.setTextColor(textColor);
             textData.setGravity(Gravity.CENTER_HORIZONTAL);
             textData.setTextSize(14);
-            textData.setPadding(10, 10, 10, 10);
-      //      textData.setLayoutParams(params);
-
+            textData.setPadding(100, 0, 0, 0);
 
             textAllenamento.setText("ALLENAMENTO");
-            textAllenamento.setTextColor(Color.BLACK);
+            textAllenamento.setTextColor(textColor);
             textAllenamento.setGravity(Gravity.CENTER_HORIZONTAL);
             textAllenamento.setTextSize(14);
-            textAllenamento.setPadding(10, 10, 10, 10);
+            textAllenamento.setPadding(300, 0, 0, 0);
+
+            if (i %2!= 0)
+                row.setBackgroundColor(backgroundColorOne);
+            else
+                row.setBackgroundColor(backgroundColorTwo);
 
             row.addView(textData);
             row.addView(textAllenamento);
-
             table.addView(row);
         }
 

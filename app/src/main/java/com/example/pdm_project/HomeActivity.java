@@ -25,6 +25,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity{
 
+    public static boolean NIGHT_MODE = false;
     /*
     From a Fragment:
 
@@ -64,9 +65,11 @@ public class HomeActivity extends AppCompatActivity{
                 if (getDelegate().getLocalNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
                     getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                     showMessage("Tema Light impostato!");
+                    NIGHT_MODE = false;
                 } else{
                     getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                     showMessage("Tema Night impostato!");
+                    NIGHT_MODE = true;
                 }
                 return true;
             case R.id.menuRightInfo:
