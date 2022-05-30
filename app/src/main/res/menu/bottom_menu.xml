@@ -5,4 +5,6 @@
     <item android:id="@+id/firstFragment" android:title="Home" android:icon="@drawable/ic_home"/>
     <item android:id="@+id/secondFragment" android:title="Allenamento" android:icon="@drawable/ic_allenamento"/>
     <item android:id="@+id/thirdFragment" android:title="Statistiche" android:icon="@drawable/ic_statistiche"/>
+    <item android:id="@+id/fourthFragment" android:title="Timer" android:icon="@drawable/ic_baseline_alarm_24"/>
+
 </menu>

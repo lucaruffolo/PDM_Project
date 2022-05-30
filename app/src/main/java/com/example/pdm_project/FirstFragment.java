@@ -58,13 +58,13 @@ public class FirstFragment extends Fragment {
             textData.setTextColor(textColor);
             textData.setGravity(Gravity.CENTER_HORIZONTAL);
             textData.setTextSize(14);
-            textData.setPadding(100, 0, 0, 0);
+            textData.setPadding(100, 20, 0, 20);
 
             textAllenamento.setText("ALLENAMENTO");
             textAllenamento.setTextColor(textColor);
             textAllenamento.setGravity(Gravity.CENTER_HORIZONTAL);
             textAllenamento.setTextSize(14);
-            textAllenamento.setPadding(300, 0, 0, 0);
+            textAllenamento.setPadding(300, 20, 0, 20);
 
             if (i %2!= 0)
                 row.setBackgroundColor(backgroundColorOne);

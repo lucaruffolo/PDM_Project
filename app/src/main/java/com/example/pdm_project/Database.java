@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class Database extends SQLiteOpenHelper {
+    
 
     public Database(Context context) {
         super(context, "Userdata.db", null, 1);
@@ -23,8 +24,8 @@ public class Database extends SQLiteOpenHelper {
         xx ESEMPIO DB xx:
         (ID, Gambe, {femorali,polpacci,altro}, 26/05/22)
         (ID, Petto, {curl,croci,panca}, 28/05/22)
-
-         */
+*/
+         
     }
 
     @Override
@@ -84,4 +85,5 @@ public class Database extends SQLiteOpenHelper {
         Cursor cursor = DB.rawQuery("Select * from Userdetails", null);
         return cursor;
     }
+
 }
