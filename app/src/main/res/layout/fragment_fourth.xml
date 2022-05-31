@@ -15,22 +15,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="48dp"
-            android:layout_marginBottom="152dp"
+            android:layout_marginBottom="144dp"
             android:text="Reset"
             android:textColor="#FB3131"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
-
-        <Button
-            android:id="@+id/btnCronoStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:layout_marginBottom="152dp"
-            android:text="Start"
-            android:textColor="#6BFF00"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView7"
@@ -81,14 +70,14 @@
 
         <TextView
             android:id="@+id/textTimer"
-            android:layout_width="178dp"
-            android:layout_height="96dp"
+            android:layout_width="199dp"
+            android:layout_height="97dp"
             android:layout_marginStart="68dp"
             android:layout_marginTop="39dp"
             android:layout_marginBottom="76dp"
-            android:fontFamily="@font/rationale"
             android:text="01:00"
-            android:textSize="80sp"
+            android:textColor="@color/black"
+            android:textSize="70sp"
             app:layout_constraintBottom_toTopOf="@+id/btnTimerReset"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7"
@@ -112,20 +101,30 @@
                 android:textAlignment="center" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
+        <Chronometer
             android:id="@+id/textCrono"
-            android:layout_width="241dp"
-            android:layout_height="82dp"
+            android:layout_width="203dp"
+            android:layout_height="77dp"
             android:layout_marginStart="106dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="28dp"
             android:layout_marginEnd="106dp"
             android:fontFamily="@font/rationale"
-            android:text="00:00:00"
             android:textSize="70sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8"
             tools:textAlignment="center" />
+
+        <Button
+            android:id="@+id/btnCronoStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginBottom="144dp"
+            android:text="Start"
+            android:textColor="#6BFF00"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textImpostaTimer"

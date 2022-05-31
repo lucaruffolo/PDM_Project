@@ -26,11 +26,13 @@ import androidx.fragment.app.Fragment;
 
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,9 +50,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class fourthFragment extends Fragment implements View.OnClickListener {
-    private int seconds;
 
-
+    // === Timer
     private TextView timerTextView;
     private Button btnStartTimer;
     private Button resetTimer;
@@ -58,15 +59,17 @@ public class fourthFragment extends Fragment implements View.OnClickListener {
     private boolean oneRun = false;
     private boolean timerRunning = false;
     private TextView textImpostaTimerz;
-
     private CountDownTimer countDownTimer;
     private long timeLeftInMs = 60000;
     private TextInputLayout inputTimers;
 
+    // === Cronometro
     private TextView cronoTextView;
     private Button btnStartCrono;
     private Button resetCrono;
     private boolean cronoStart = false;
+    private Chronometer cronometro;
+    private long timeWhenStopped = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {  super.onCreate(savedInstanceState);  }
@@ -81,7 +84,7 @@ public class fourthFragment extends Fragment implements View.OnClickListener {
         resetTimer = (Button) rootView.findViewById(btnTimerReset);
         textImpostaTimerz = (TextView) rootView.findViewById(textImpostaTimer);
 
-        cronoTextView = (TextView) rootView.findViewById(textCrono);
+        cronometro = (Chronometer) rootView.findViewById(textCrono);
         btnStartCrono = (Button) rootView.findViewById(btnCronoStart);
         resetCrono = (Button) rootView.findViewById(btnCronoReset);
 
@@ -104,8 +107,11 @@ public class fourthFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         switch (view.getId()){
+            case btnCronoReset:
+                resetCrono();
+                break;
             case btnCronoStart:
-
+                startCrono();
                 break;
             case btnTimerStart:
                 if (timerStart == false){
@@ -140,19 +146,22 @@ public class fourthFragment extends Fragment implements View.OnClickListener {
 
             }
         }.start();
-        btnStartTimer.setText("PAUSE");
+        btnStartTimer.setText("PAUSA");
         timerRunning = true;
     }
 
     public void stopTimer(){
         countDownTimer.cancel();
         timerRunning = false;
-        btnStartTimer.setText("START");
+        btnStartTimer.setText("RIPRENDI");
     }
     public void resetTimer(){
+        btnStartTimer.setText("START");
+
         if (!inputTimers.getEditText().getText().toString().isEmpty()) {
             if (oneRun) {
-                stopTimer();
+                countDownTimer.cancel();
+                timerRunning = false;
             }
             String myDate = inputTimers.getEditText().getText().toString();
             SimpleDateFormat sdf = new SimpleDateFormat("mm:ss");
@@ -162,7 +171,7 @@ public class fourthFragment extends Fragment implements View.OnClickListener {
                 long millis = date.getTime();
                 timerTextView.setText(inputTimers.getEditText().getText());
                 timeLeftInMs = millis;
-                textImpostaTimerz.setText("Timer impstato");
+                textImpostaTimerz.setText("Timer impostato");
                 textImpostaTimerz.setTextColor(Color.BLUE);
             } catch (ParseException e) {
                 Toast.makeText(getActivity(), "Errore orario, usa il formato MINUTI:SECONDI", Toast.LENGTH_SHORT).show();
@@ -173,7 +182,8 @@ public class fourthFragment extends Fragment implements View.OnClickListener {
 
         } else{
             if (oneRun) {
-                stopTimer();
+                countDownTimer.cancel();
+                timerRunning = false;
             }
             timerTextView.setText("01:00");
             timeLeftInMs = 60000;
@@ -194,4 +204,28 @@ public class fourthFragment extends Fragment implements View.OnClickListener {
 
     }
 
+
+
+    public void startCrono(){
+        if (cronoStart == false) {
+            cronoStart = true;
+            cronometro.setBase(SystemClock.elapsedRealtime() + timeWhenStopped);
+            cronometro.start();
+            btnStartCrono.setText("PAUSA");
+        }else {
+            cronometro.stop();
+            timeWhenStopped = cronometro.getBase() - SystemClock.elapsedRealtime();
+            btnStartCrono.setText("RIPRENDI");
+            cronoStart = false;
+        }
+    }
+    public void resetCrono(){
+        cronoStart = false;
+        cronometro.stop();
+        btnStartCrono.setText("START");
+        timeWhenStopped = 0;
+        cronometro.setBase(SystemClock.elapsedRealtime());
+
+
+    }
 }
