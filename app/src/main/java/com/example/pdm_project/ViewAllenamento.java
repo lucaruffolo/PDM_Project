@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class AllenamentoActivity extends AppCompatActivity {
+public class ViewAllenamento extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_allenamento);
+       // setContentView(R.layout.activity_view_allenamento);
     }
 }

@@ -4,14 +4,12 @@ import static com.example.pdm_project.R.id.btnAddAllenamento;
 import static com.example.pdm_project.R.id.btnAllenamentoDue;
 import static com.example.pdm_project.R.id.btnAllenamentoTre;
 import static com.example.pdm_project.R.id.btnAllenamentoUno;
-import static com.example.pdm_project.R.id.secondFragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,19 +52,19 @@ public class SecondFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()){
             case btnAllenamentoUno:
-                Intent actvUno = new Intent(getActivity(), AllenamentoActivity.class);
+                Intent actvUno = new Intent(getActivity(), AddAllenamento.class);
                 startActivity(actvUno);
                 break;
             case btnAllenamentoDue:
-                Intent actvDue = new Intent(getActivity(), AllenamentoActivity.class);
+                Intent actvDue = new Intent(getActivity(), AddAllenamento.class);
                 startActivity(actvDue);
                 break;
             case btnAllenamentoTre:
-                Intent actvTre = new Intent(getActivity(), AllenamentoActivity.class);
+                Intent actvTre = new Intent(getActivity(), AddAllenamento.class);
                 startActivity(actvTre);
                 break;
             case btnAddAllenamento:
-                Intent actvAdd = new Intent(getActivity(), AllenamentoActivity.class);
+                Intent actvAdd = new Intent(getActivity(), AddAllenamento.class);
                 startActivity(actvAdd);
                 break;
             default:
