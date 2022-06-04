@@ -1,9 +1,5 @@
 package com.example.pdm_project;
 
-import static com.example.pdm_project.R.id.btnAddAllenamento;
-import static com.example.pdm_project.R.id.btnAllenamentoDue;
-import static com.example.pdm_project.R.id.btnAllenamentoTre;
-import static com.example.pdm_project.R.id.btnAllenamentoUno;
 import static com.example.pdm_project.R.id.btnCronoReset;
 import static com.example.pdm_project.R.id.btnCronoStart;
 import static com.example.pdm_project.R.id.btnTimerReset;
@@ -11,48 +7,41 @@ import static com.example.pdm_project.R.id.btnTimerStart;
 import static com.example.pdm_project.R.id.inputTimer;
 import static com.example.pdm_project.R.id.textCrono;
 import static com.example.pdm_project.R.id.textImpostaTimer;
+import static com.example.pdm_project.R.id.textLabelTimer;
 import static com.example.pdm_project.R.id.textTimer;
+import static com.example.pdm_project.R.id.textView;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
+import android.media.AudioManager;
+import android.media.ToneGenerator;
 import android.os.Bundle;
 
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.core.app.NotificationCompatSideChannelService;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.os.CountDownTimer;
-import android.os.Handler;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-import org.w3c.dom.Text;
-
-import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.TimeZone;
 
 public class fourthFragment extends Fragment implements View.OnClickListener {
 
     // === Timer
     private TextView timerTextView;
+    private TextView textlblTimer;
     private Button btnStartTimer;
     private Button resetTimer;
     private boolean timerStart = false;
@@ -82,12 +71,12 @@ public class fourthFragment extends Fragment implements View.OnClickListener {
         timerTextView = (TextView) rootView.findViewById(textTimer);
         btnStartTimer = (Button) rootView.findViewById(btnTimerStart);
         resetTimer = (Button) rootView.findViewById(btnTimerReset);
+        textlblTimer = (TextView) rootView.findViewById(textLabelTimer);
         textImpostaTimerz = (TextView) rootView.findViewById(textImpostaTimer);
 
         cronometro = (Chronometer) rootView.findViewById(textCrono);
         btnStartCrono = (Button) rootView.findViewById(btnCronoStart);
         resetCrono = (Button) rootView.findViewById(btnCronoReset);
-
 
         btnStartTimer.setOnClickListener(this);
         resetTimer.setOnClickListener(this);
@@ -132,7 +121,7 @@ public class fourthFragment extends Fragment implements View.OnClickListener {
     }
 
     public void startTimer(){
-
+    // timer end 0:00 = fai partire un restart
         oneRun = true;
         countDownTimer = new CountDownTimer(timeLeftInMs, 1000) {
             @Override
@@ -143,7 +132,16 @@ public class fourthFragment extends Fragment implements View.OnClickListener {
 
             @Override
             public void onFinish() {
-
+                reStartTimer();
+                Animation anim = new AlphaAnimation(0.0f, 1.0f);
+                anim.setDuration(50); //You can manage the blinking time with this parameter
+                anim.setStartOffset(20);
+                anim.setRepeatMode(Animation.REVERSE);
+                anim.setRepeatCount(25);
+                textlblTimer.startAnimation(anim);
+                timerTextView.startAnimation(anim);
+                ToneGenerator toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
+                toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP,1000);
             }
         }.start();
         btnStartTimer.setText("PAUSA");
@@ -155,6 +153,12 @@ public class fourthFragment extends Fragment implements View.OnClickListener {
         timerRunning = false;
         btnStartTimer.setText("RIPRENDI");
     }
+    public void reStartTimer(){
+        countDownTimer.cancel();
+        timerRunning = false;
+        btnStartTimer.setText("START");
+    }
+
     public void resetTimer(){
         btnStartTimer.setText("START");
 
@@ -165,6 +169,8 @@ public class fourthFragment extends Fragment implements View.OnClickListener {
             }
             String myDate = inputTimers.getEditText().getText().toString();
             SimpleDateFormat sdf = new SimpleDateFormat("mm:ss");
+            sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
+
             Date date = null;
             try {
                 date = sdf.parse(myDate);
@@ -191,6 +197,7 @@ public class fourthFragment extends Fragment implements View.OnClickListener {
     }
 
     public void updateTimer(){
+
         int minutes = (int) timeLeftInMs / 60000;
         int seconds = (int) timeLeftInMs % 60000 / 1000;
 

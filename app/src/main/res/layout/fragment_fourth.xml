@@ -22,7 +22,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/textLabelTimer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#C8C8C8"
@@ -76,11 +76,11 @@
             android:layout_marginTop="39dp"
             android:layout_marginBottom="76dp"
             android:text="01:00"
-            android:textColor="@color/black"
+            android:textColor="@color/blue"
             android:textSize="70sp"
             app:layout_constraintBottom_toTopOf="@+id/btnTimerReset"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            app:layout_constraintTop_toBottomOf="@+id/textLabelTimer"
             app:layout_constraintVertical_bias="0.0"
             tools:textAlignment="center" />
 
@@ -90,8 +90,10 @@
             android:layout_height="75dp"
             android:layout_marginStart="288dp"
             android:layout_marginTop="52dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7">
+            app:layout_constraintTop_toBottomOf="@+id/textLabelTimer">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tiet"
@@ -109,6 +111,7 @@
             android:layout_marginTop="28dp"
             android:layout_marginEnd="106dp"
             android:fontFamily="@font/rationale"
+            android:textColor="@color/blue"
             android:textSize="70sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

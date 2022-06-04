@@ -40,7 +40,7 @@ public class AddAllenamento extends AppCompatActivity {
                 }
 
                 try {
-                    HomeActivity.db.addAllenamento(data.getText().toString().trim(),
+                    MainActivity.db.addAllenamento(data.getText().toString().trim(),
                             nomeAllenamento.getText().toString().trim(),
                             esercizio.getText().toString().trim(),
                             kgriposo.getText().toString().trim(),

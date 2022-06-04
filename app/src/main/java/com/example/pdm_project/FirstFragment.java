@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -22,6 +23,7 @@ public class FirstFragment extends Fragment {
 
     private TableLayout table;
     private TableRow row;
+    private LinearLayout mll;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,17 @@ public class FirstFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_first, container, false);
         table = (TableLayout) view.findViewById(R.id.table);
+        mll = (LinearLayout) view.findViewById(R.id.lllayout);
+
+        int childCount = table.getChildCount();
+        Toast.makeText(getContext(), "Caricato " + MainActivity.array_id.size() + " Allenamenti", Toast.LENGTH_SHORT).show();
+        // Remove all rows except the first one
+
+        if (childCount > 1) {
+            table.removeViews(1, childCount - 1);
+        }
+        MainActivity.loadDataFromDB();
+
 
         int textColor, backgroundColorOne, backgroundColorTwo;
 
@@ -50,17 +63,19 @@ public class FirstFragment extends Fragment {
             backgroundColorTwo = Color.LTGRAY;
         }
 
-        for (int i = 0; i<=24; i++){
+        //load data in table
+
+        for (int i = 0; i< MainActivity.array_id.size() ; i++){
             row = new TableRow(getActivity());
             TextView textData = new TextView(getActivity());
             TextView textAllenamento = new TextView(getActivity());
-            textData.setText("01/01/2022");
+            textData.setText(MainActivity.array_dataAllenamento.get(i));
             textData.setTextColor(textColor);
             textData.setGravity(Gravity.CENTER_HORIZONTAL);
             textData.setTextSize(14);
             textData.setPadding(100, 20, 0, 20);
 
-            textAllenamento.setText("ALLENAMENTO");
+            textAllenamento.setText(MainActivity.array_nomeAllenamento.get(i));
             textAllenamento.setTextColor(textColor);
             textAllenamento.setGravity(Gravity.CENTER_HORIZONTAL);
             textAllenamento.setTextSize(14);

@@ -9,6 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
@@ -23,8 +24,12 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+
 public class HomeActivity extends AppCompatActivity{
-    public static Database db;
+
+
+
     public static boolean NIGHT_MODE = false;
     /*
     From a Fragment:
@@ -40,7 +45,7 @@ public class HomeActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        db = new Database(this);
+
         setContentView(R.layout.activity_main);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         NavController navController = Navigation.findNavController(this,  R.id.FragmentContainerView);
@@ -48,6 +53,8 @@ public class HomeActivity extends AppCompatActivity{
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.firstFragment, R.id.secondFragment, R.id.thirdFragment).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
+
    }
 
     @Override
@@ -86,6 +93,7 @@ public class HomeActivity extends AppCompatActivity{
     private void showMessage(String message){
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
+
 
 
 }

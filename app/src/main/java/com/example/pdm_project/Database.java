@@ -62,7 +62,6 @@ public class Database extends SQLiteOpenHelper {
     }
 
 
-     /*
     Cursor readAllData(){
         String query = "SELECT * FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();
@@ -73,7 +72,7 @@ public class Database extends SQLiteOpenHelper {
         }
         return cursor;
     }
-
+/*
     void updateData(String row_id, String title, String author, String pages){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -103,6 +102,5 @@ public class Database extends SQLiteOpenHelper {
     void deleteAllData(){
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_NAME);
-    }
-*/
+    }*/
 }
