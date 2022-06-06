@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/rationale"
-            android:text="Ultimi Allenamenti"
+            android:text="Lista Allenamenti"
             android:textAlignment="center"
             android:textSize="48sp" />
 
@@ -56,51 +56,10 @@
             </TableRow>
         </TableLayout>
 
-        <ScrollView
-            android:id="@+id/scrollmaintable"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:scrollbars="none"
-            tools:ignore="SpeakableTextPresentCheck">
-
-            <TableLayout
-                android:id="@+id/table"
-                android:layout_width="match_parent"
-                android:layout_height="250sp"
-                android:background="@color/white">
-                <!--
-                        <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="88dp"
-                            android:background="@color/gray">
-
-                            <TextView
-                                android:id="@+id/coldata"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:gravity="center_horizontal"
-                                android:padding="10sp"
-                                android:text="DATA"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
-
-                            <TextView
-                                android:id="@+id/colallenamento"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="4"
-                                android:gravity="center_horizontal"
-                                android:padding="10sp"
-                                android:text="NOME ALLENAMENTO"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
-                        </TableRow>
-            -->
-            </TableLayout>
-
-        </ScrollView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="383dp" />
 
         <ImageView
             android:id="@+id/imageView"

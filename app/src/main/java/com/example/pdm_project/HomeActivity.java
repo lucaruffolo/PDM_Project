@@ -81,7 +81,6 @@ public class HomeActivity extends AppCompatActivity{
                 return true;
             case R.id.menuRightInfo:
                 startActivity(new Intent(HomeActivity.this, AboutActivity.class));
-                //showMessage("INFO");
                 return true;
 
             default:

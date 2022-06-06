@@ -15,8 +15,6 @@ public class ViewAllenamento extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_view_allenamento);
-
         nomeAllenamento = findViewById(R.id.textNomeAllenamento);
         dataAllenamento = findViewById(R.id.textDataAllenamento);
         ll = findViewById(R.id.viewAll_linearlayout);

@@ -1,24 +1,24 @@
 package com.example.pdm_project;
 
-import android.graphics.Color;
+import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.text.Layout;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import java.util.ArrayList;
 
 public class FirstFragment extends Fragment {
 
@@ -27,39 +27,58 @@ public class FirstFragment extends Fragment {
     private LinearLayout mll;
     private ScrollView sv;
 
+    private RecyclerView rv;
+    private CustomAdapter ca;
+    public static ArrayList<String> array_id;
+    public static ArrayList<String> array_nomeAllenamento;
+    public static ArrayList<String> array_dataAllenamento;
+    public static ArrayList<String> array_esercizioAllenamento;
+    public static ArrayList<String> array_kgRiposoAllenamento;
+    public static ArrayList<String> array_DurataAllenamento;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        MainActivity.loadDataFromDB();
 
         View view = inflater.inflate(R.layout.fragment_first, container, false);
-        table = (TableLayout) view.findViewById(R.id.table);
-        mll = (LinearLayout) view.findViewById(R.id.lllayout);
-        sv = (ScrollView) view.findViewById(R.id.scrollmaintable);
-        Toast.makeText(getContext(), "Caricato " + MainActivity.array_id.size() + " Allenamenti", Toast.LENGTH_SHORT).show();
 
 
-        // Pulisco tabella
-        table.removeView(table.getChildAt(0));
-        // carico dati in tab
-        LoadTable();
+        rv = (RecyclerView) view.findViewById(R.id.RecyclerView);
+        array_id = new ArrayList<>();
+        array_nomeAllenamento = new ArrayList<>();
+        array_dataAllenamento = new ArrayList<>();
+        array_esercizioAllenamento = new ArrayList<>();
 
+        storeDataInArrays();
+        Toast.makeText(view.getContext(), "Caricato " + array_id.size() + " Allenamenti", Toast.LENGTH_SHORT).show();
 
-
+        ca = new CustomAdapter(getActivity(),getContext(), array_nomeAllenamento,array_dataAllenamento);
+        rv.setAdapter(ca);
+        rv.setLayoutManager(new LinearLayoutManager(getContext()));
 
         return view;
-      //  return inflater.inflate(R.layout.fragment_first, container, false);
     }
 
+    public void storeDataInArrays(){
+        Cursor cursor = MainActivity.db.readAllData();
+        if (cursor.getCount() == 0){
+            Toast.makeText(getContext(), "Database vuoto", Toast.LENGTH_SHORT).show();
+        }else{
+            while (cursor.moveToNext()){
+                array_id.add(cursor.getString(0));
+                array_dataAllenamento.add(cursor.getString(1));
+                array_nomeAllenamento.add(cursor.getString(2));
+            }
+        }
+    }
 
+/*
     public void LoadTable(){
         int textColor, backgroundColorOne, backgroundColorTwo;
 
@@ -75,7 +94,7 @@ public class FirstFragment extends Fragment {
 
         //load data in table
 
-        for (int i = 0; i< MainActivity.array_id.size() ; i++){
+        for (int i = 0; i< view.array_id.size() ; i++){
             row = new TableRow(getActivity());
             TextView textData = new TextView(getActivity());
             TextView textAllenamento = new TextView(getActivity());
@@ -101,4 +120,8 @@ public class FirstFragment extends Fragment {
             table.addView(row);
         }
     }
+
+
+ */
+
 }
