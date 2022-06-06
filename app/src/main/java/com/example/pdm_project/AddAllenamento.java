@@ -35,26 +35,25 @@ public class AddAllenamento extends AppCompatActivity {
                     duraAll = 0;
                 }
 
-                if (kgriposo.getText().toString().isEmpty()){
-                    kgriposo.setText("0");
+                if(!data.getText().toString().isEmpty() && !nomeAllenamento.getText().toString().isEmpty() && !esercizio.getText().toString().isEmpty()){
+                    try {
+                        MainActivity.db.addAllenamento(data.getText().toString().trim(),
+                                nomeAllenamento.getText().toString().trim(),
+                                esercizio.getText().toString().trim(),
+                                kgriposo.getText().toString().trim(),
+                                duraAll);
+                        data.getText().clear();
+                        nomeAllenamento.getText().clear();
+                        esercizio.getText().clear();
+                        kgriposo.getText().clear();
+                        durataAllenamento.getText().clear();
+                    } catch (NumberFormatException e) {
+                        Toast.makeText(AddAllenamento.this, "ERRORE NEL COMPILARE I CAMPI", Toast.LENGTH_SHORT).show();
+                    }
                 }
-
-                try {
-                    MainActivity.db.addAllenamento(data.getText().toString().trim(),
-                            nomeAllenamento.getText().toString().trim(),
-                            esercizio.getText().toString().trim(),
-                            kgriposo.getText().toString().trim(),
-                            duraAll);
-                    data.getText().clear();
-                    nomeAllenamento.getText().clear();
-                    esercizio.getText().clear();
-                    kgriposo.getText().clear();
-                    durataAllenamento.getText().clear();
-                } catch (NumberFormatException e) {
+                else
                     Toast.makeText(AddAllenamento.this, "ERRORE NEL COMPILARE I CAMPI", Toast.LENGTH_SHORT).show();
                 }
-
-            }
         });
     }
     public boolean isNumeric(String str) {

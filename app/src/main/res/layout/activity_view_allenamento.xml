@@ -6,4 +6,56 @@
     android:layout_height="match_parent"
     tools:context=".ViewAllenamento">
 
+    <TextView
+        android:id="@+id/textAllenamento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="19dp"
+        android:background="#C8C8C8"
+        android:fontFamily="@font/rationale"
+        android:text="Visualizzazzione Allenamento"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/textNomeAllenamento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textNomeAllenamento"
+        android:layout_width="287dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="121dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="121dp"
+        android:text="NOME"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textAllenamento" />
+
+    <TextView
+        android:id="@+id/textDataAllenamento"
+        android:layout_width="204dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="121dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="121dp"
+        android:text="DATA"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textNomeAllenamento" />
+
+    <LinearLayout
+        android:id="@+id/viewAll_linearlayout"
+        android:layout_width="409dp"
+        android:layout_height="531dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDataAllenamento"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

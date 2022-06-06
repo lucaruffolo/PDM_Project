@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -24,6 +25,7 @@ public class FirstFragment extends Fragment {
     private TableLayout table;
     private TableRow row;
     private LinearLayout mll;
+    private ScrollView sv;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,21 +38,29 @@ public class FirstFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        MainActivity.loadDataFromDB();
 
         View view = inflater.inflate(R.layout.fragment_first, container, false);
         table = (TableLayout) view.findViewById(R.id.table);
         mll = (LinearLayout) view.findViewById(R.id.lllayout);
-
-        int childCount = table.getChildCount();
+        sv = (ScrollView) view.findViewById(R.id.scrollmaintable);
         Toast.makeText(getContext(), "Caricato " + MainActivity.array_id.size() + " Allenamenti", Toast.LENGTH_SHORT).show();
-        // Remove all rows except the first one
-
-        if (childCount > 1) {
-            table.removeViews(1, childCount - 1);
-        }
-        MainActivity.loadDataFromDB();
 
 
+        // Pulisco tabella
+        table.removeView(table.getChildAt(0));
+        // carico dati in tab
+        LoadTable();
+
+
+
+
+        return view;
+      //  return inflater.inflate(R.layout.fragment_first, container, false);
+    }
+
+
+    public void LoadTable(){
         int textColor, backgroundColorOne, backgroundColorTwo;
 
         if (HomeActivity.NIGHT_MODE){
@@ -90,9 +100,5 @@ public class FirstFragment extends Fragment {
             row.addView(textAllenamento);
             table.addView(row);
         }
-
-        return view;
-      //  return inflater.inflate(R.layout.fragment_first, container, false);
     }
-
 }

@@ -29,9 +29,9 @@ public class Database extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TABLE_NAME + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_DATA + " TEXT, " +
-                COLUMN_NOME_ALLENAMENTO + " TEXT, " +
-                COLUMN_ESERCIZIO + " TEXT, " +
+                COLUMN_DATA + " TEXT NOT NULL, " +
+                COLUMN_NOME_ALLENAMENTO + " TEXT NOT NULL, " +
+                COLUMN_ESERCIZIO + " TEXT NOT NULL, " +
                 COLUMN_PESO_RIPOSO + " TEXT, " +
                 COLUMN_DURATA_ALLENAMENTO + " INTEGER);";
         db.execSQL(query);
