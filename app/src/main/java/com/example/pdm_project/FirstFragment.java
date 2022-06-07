@@ -54,11 +54,13 @@ public class FirstFragment extends Fragment {
         array_nomeAllenamento = new ArrayList<>();
         array_dataAllenamento = new ArrayList<>();
         array_esercizioAllenamento = new ArrayList<>();
+        array_kgRiposoAllenamento = new ArrayList<>();
+        array_DurataAllenamento = new ArrayList<>();
 
         storeDataInArrays();
         Toast.makeText(view.getContext(), "Caricato " + array_id.size() + " Allenamenti", Toast.LENGTH_SHORT).show();
 
-        ca = new CustomAdapter(getActivity(),getContext(), array_nomeAllenamento,array_dataAllenamento);
+        ca = new CustomAdapter(getActivity(),getContext(),array_id, array_nomeAllenamento,array_dataAllenamento);
         rv.setAdapter(ca);
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -74,6 +76,9 @@ public class FirstFragment extends Fragment {
                 array_id.add(cursor.getString(0));
                 array_dataAllenamento.add(cursor.getString(1));
                 array_nomeAllenamento.add(cursor.getString(2));
+                array_esercizioAllenamento.add(cursor.getString(3));
+                array_kgRiposoAllenamento.add(cursor.getString(4));
+                array_DurataAllenamento.add(cursor.getString(5));
             }
         }
     }

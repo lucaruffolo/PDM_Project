@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PDM_Project">
         <activity
-            android:name=".ViewAllenamento"
+            android:name=".EditAllenamento"
             android:exported="false" />
         <activity
             android:name=".AddAllenamento"

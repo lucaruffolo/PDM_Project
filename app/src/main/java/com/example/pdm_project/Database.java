@@ -21,7 +21,7 @@ public class Database extends SQLiteOpenHelper {
     private static final String COLUMN_PESO_RIPOSO = "kg_riposo";
     private static final String COLUMN_DURATA_ALLENAMENTO = "durata_allenamento";
 
-    public Database(@Nullable Context context) {
+    Database(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
     }
@@ -72,23 +72,25 @@ public class Database extends SQLiteOpenHelper {
         }
         return cursor;
     }
-/*
-    void updateData(String row_id, String title, String author, String pages){
+
+    void updateData(String row_id,String nome, String data, String esercizio, String riposo, String durata){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put(COLUMN_TITLE, title);
-        cv.put(COLUMN_AUTHOR, author);
-        cv.put(COLUMN_PAGES, pages);
+        cv.put(COLUMN_NOME_ALLENAMENTO, nome);
+        cv.put(COLUMN_DATA, data);
+        cv.put(COLUMN_ESERCIZIO, esercizio);
+        cv.put(COLUMN_PESO_RIPOSO, riposo);
+        cv.put(COLUMN_DURATA_ALLENAMENTO, durata);
 
         long result = db.update(TABLE_NAME, cv, "_id=?", new String[]{row_id});
         if(result == -1){
-            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Aggiornamento fallito ", Toast.LENGTH_SHORT).show();
         }else {
-            Toast.makeText(context, "Updated Successfully!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Allenamento aggiornato!", Toast.LENGTH_SHORT).show();
         }
 
     }
-
+//--
     void deleteOneRow(String row_id){
         SQLiteDatabase db = this.getWritableDatabase();
         long result = db.delete(TABLE_NAME, "_id=?", new String[]{row_id});
@@ -102,5 +104,6 @@ public class Database extends SQLiteOpenHelper {
     void deleteAllData(){
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_NAME);
-    }*/
+    }
 }
+
