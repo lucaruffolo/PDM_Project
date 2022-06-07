@@ -2,6 +2,7 @@ package com.example.pdm_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -35,7 +36,8 @@ public class EditAllenamento extends AppCompatActivity {
                 durata = durata_input.getText().toString().trim();
                 MainActivity.db.updateData(id,nome,data,esercizi,durata,kgrip);
 
-
+                Intent actvAdd = new Intent(EditAllenamento.this, HomeActivity.class);
+                startActivity(actvAdd);
             }
         });
         getSetIntentData();
@@ -48,7 +50,7 @@ public class EditAllenamento extends AppCompatActivity {
             data = getIntent().getStringExtra("data");
             esercizi = getIntent().getStringExtra("esercizi");
             durata = getIntent().getStringExtra("durata");
-            kgrip = getIntent().getStringExtra("kgrp");
+            kgrip = getIntent().getStringExtra("kgrip");
 
             //set
 

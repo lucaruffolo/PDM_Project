@@ -20,14 +20,17 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     private Context context;
     private Activity activity;
-    private ArrayList<String> id, nome, data;
+    private ArrayList<String> id, nome, data,esercizio,kgrip,durata;
 
-    CustomAdapter(Activity activity,Context context, ArrayList<String> id,ArrayList<String> nome, ArrayList<String> data){
+    CustomAdapter(Activity activity,Context context, ArrayList<String> id,ArrayList<String> nome, ArrayList<String> data, ArrayList<String> esercizio, ArrayList<String> kgrip, ArrayList<String> durata){
         this.activity = activity;
         this.context = context;
         this.id = id;
         this.nome = nome;
         this.data = data;
+        this.esercizio = esercizio;
+        this.kgrip = kgrip;
+        this.durata = durata;
     }
 
     @NonNull
@@ -46,6 +49,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.idview.setText(String.valueOf(id.get(position)));
         holder.dataview.setText(String.valueOf(data.get(position)));
         holder.nomeview.setText(String.valueOf(nome.get(position)));
+        holder.eserciziview.setText(String.valueOf(esercizio.get(position)));
+        holder.kgripview.setText(String.valueOf(kgrip.get(position)));
+        holder.durataview.setText(String.valueOf(durata.get(position)));
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,6 +59,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 intent.putExtra("id", String.valueOf(id.get(position)));
                 intent.putExtra("nome", String.valueOf(nome.get(position)));
                 intent.putExtra("data", String.valueOf(data.get(position)));
+                intent.putExtra("esercizi", String.valueOf(esercizio.get(position)));
+                intent.putExtra("kgrip", String.valueOf(kgrip.get(position)));
+                intent.putExtra("durata", String.valueOf(durata.get(position)));
 
                 context.startActivity(intent);
 
@@ -67,13 +76,16 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView idview,dataview,nomeview;
+        TextView idview,dataview,nomeview,eserciziview,kgripview,durataview;
         LinearLayout mainLayout;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             idview =itemView.findViewById(R.id.home_ViewIdAllenamento);
             dataview = itemView.findViewById(R.id.home_ViewDataAllenamento);
             nomeview = itemView.findViewById(R.id.home_ViewNomeAllenamento);
+            eserciziview =itemView.findViewById(R.id.home_ViewEserciziAllenamento);
+            kgripview = itemView.findViewById(R.id.home_ViewkgripAllenamento);
+            durataview = itemView.findViewById(R.id.home_ViewDurataAllenamento);
             mainLayout = itemView.findViewById(R.id.mainLayout);
         }
     }

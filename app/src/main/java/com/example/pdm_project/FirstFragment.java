@@ -48,7 +48,11 @@ public class FirstFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_first, container, false);
 
+        loadData(view);
 
+        return view;
+    }
+    public void loadData(View view){
         rv = (RecyclerView) view.findViewById(R.id.RecyclerView);
         array_id = new ArrayList<>();
         array_nomeAllenamento = new ArrayList<>();
@@ -60,12 +64,11 @@ public class FirstFragment extends Fragment {
         storeDataInArrays();
         Toast.makeText(view.getContext(), "Caricato " + array_id.size() + " Allenamenti", Toast.LENGTH_SHORT).show();
 
-        ca = new CustomAdapter(getActivity(),getContext(),array_id, array_nomeAllenamento,array_dataAllenamento);
+        ca = new CustomAdapter(getActivity(),getContext(),array_id, array_nomeAllenamento,array_dataAllenamento,array_esercizioAllenamento,array_kgRiposoAllenamento,array_DurataAllenamento);
         rv.setAdapter(ca);
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        return view;
     }
+
 
     public void storeDataInArrays(){
         Cursor cursor = MainActivity.db.readAllData();
