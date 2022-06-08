@@ -42,11 +42,9 @@ public class AddAllenamento extends AppCompatActivity {
                                 esercizio.getText().toString().trim(),
                                 kgriposo.getText().toString().trim(),
                                 duraAll);
-                        data.getText().clear();
-                        nomeAllenamento.getText().clear();
-                        esercizio.getText().clear();
-                        kgriposo.getText().clear();
-                        durataAllenamento.getText().clear();
+                        finish();
+
+
                     } catch (NumberFormatException e) {
                         Toast.makeText(AddAllenamento.this, "ERRORE NEL COMPILARE I CAMPI", Toast.LENGTH_SHORT).show();
                     }

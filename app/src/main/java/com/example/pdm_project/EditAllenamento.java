@@ -38,7 +38,7 @@ public class EditAllenamento extends AppCompatActivity {
                 kgrip = kgrip_input.getText().toString().trim();
                 durata = durata_input.getText().toString().trim();
                 MainActivity.db.updateData(id,nome,data,esercizi,durata,kgrip);
-
+                finish();
                 Intent actvAdd = new Intent(EditAllenamento.this, HomeActivity.class);
                 startActivity(actvAdd);
             }
@@ -83,6 +83,7 @@ public class EditAllenamento extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 MainActivity.db.deleteOneRow(id);
+                finish();
                 Intent actvAdd = new Intent(EditAllenamento.this, HomeActivity.class);
                 startActivity(actvAdd);
             }
@@ -90,8 +91,7 @@ public class EditAllenamento extends AppCompatActivity {
         b.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Intent actvAdd = new Intent(EditAllenamento.this, HomeActivity.class);
-                startActivity(actvAdd);
+                finish();
             }
         });
         b.create().show();

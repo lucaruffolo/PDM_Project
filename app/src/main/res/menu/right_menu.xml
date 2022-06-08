@@ -12,5 +12,8 @@
     <item
         android:id="@+id/menuRightInfo"
         android:title="info" />
+    <item
+        android:id="@+id/deleteAll"
+        android:title="Elimina DATI" />
 
 </menu>

@@ -1,6 +1,7 @@
 package com.example.pdm_project;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.navigation.NavController;
@@ -8,6 +9,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
@@ -82,7 +84,27 @@ public class HomeActivity extends AppCompatActivity{
             case R.id.menuRightInfo:
                 startActivity(new Intent(HomeActivity.this, AboutActivity.class));
                 return true;
+            case R.id.deleteAll:
+                AlertDialog.Builder b = new AlertDialog.Builder(this);
+                b.setTitle("Eliminare tutti i DATI?");
+                b.setMessage("Sei sicuro di voler eliminare l'intero database?");
+                b.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        showMessage("Database Eliminato");
+                        MainActivity.db.deleteAllData();
+                        finish();
+                        startActivity(getIntent());
+                    }
+                });
+                b.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
+                    }
+                });
+                b.create().show();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
