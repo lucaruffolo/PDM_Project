@@ -19,11 +19,9 @@ import java.util.ArrayList;
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
     private Context context;
-    private Activity activity;
     private ArrayList<String> id, nome, data,esercizio,kgrip,durata;
 
-    CustomAdapter(Activity activity,Context context, ArrayList<String> id,ArrayList<String> nome, ArrayList<String> data, ArrayList<String> esercizio, ArrayList<String> kgrip, ArrayList<String> durata){
-        this.activity = activity;
+    CustomAdapter(Context context, ArrayList<String> id,ArrayList<String> nome, ArrayList<String> data, ArrayList<String> esercizio, ArrayList<String> kgrip, ArrayList<String> durata){
         this.context = context;
         this.id = id;
         this.nome = nome;

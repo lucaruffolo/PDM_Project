@@ -79,4 +79,15 @@
         android:text="Aggiorna"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_DurataAllenamento2" />
+
+    <Button
+        android:id="@+id/btn_deleteAllenamento"
+        android:layout_width="117dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="8dp"
+        android:text="Elimina"
+        android:textColor="@color/red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_updateAllenamento" />
 </androidx.constraintlayout.widget.ConstraintLayout>

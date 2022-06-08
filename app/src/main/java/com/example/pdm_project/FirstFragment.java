@@ -64,7 +64,7 @@ public class FirstFragment extends Fragment {
         storeDataInArrays();
         Toast.makeText(view.getContext(), "Caricato " + array_id.size() + " Allenamenti", Toast.LENGTH_SHORT).show();
 
-        ca = new CustomAdapter(getActivity(),getContext(),array_id, array_nomeAllenamento,array_dataAllenamento,array_esercizioAllenamento,array_kgRiposoAllenamento,array_DurataAllenamento);
+        ca = new CustomAdapter(getContext(),array_id, array_nomeAllenamento,array_dataAllenamento,array_esercizioAllenamento,array_kgRiposoAllenamento,array_DurataAllenamento);
         rv.setAdapter(ca);
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
     }

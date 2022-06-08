@@ -1,7 +1,9 @@
 package com.example.pdm_project;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,7 +15,7 @@ import android.widget.Toast;
 public class EditAllenamento extends AppCompatActivity {
 
     EditText nome_input, data_input, esercizi_input, durata_input,kgrip_input;
-    Button btnEdit;
+    Button btnEdit, btnDelete;
     String id,nome, data, esercizi, durata,kgrip;
 
     @Override
@@ -26,6 +28,7 @@ public class EditAllenamento extends AppCompatActivity {
         kgrip_input = findViewById(R.id.input_KgRiposo2);
         durata_input = findViewById(R.id.input_DurataAllenamento2);
         btnEdit = findViewById(R.id.btn_updateAllenamento);
+        btnDelete = findViewById(R.id.btn_deleteAllenamento);
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,6 +41,12 @@ public class EditAllenamento extends AppCompatActivity {
 
                 Intent actvAdd = new Intent(EditAllenamento.this, HomeActivity.class);
                 startActivity(actvAdd);
+            }
+        });
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                confirmDialog();
             }
         });
         getSetIntentData();
@@ -64,5 +73,27 @@ public class EditAllenamento extends AppCompatActivity {
         }else{
             Toast.makeText(this, "Errore edit", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    void confirmDialog(){
+        AlertDialog.Builder b = new AlertDialog.Builder(this);
+        b.setTitle("Eliminare "+ nome + " in data " + data+ " ?");
+        b.setMessage("Sei sicuro di voler eliminare l'allenamento?");
+        b.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                MainActivity.db.deleteOneRow(id);
+                Intent actvAdd = new Intent(EditAllenamento.this, HomeActivity.class);
+                startActivity(actvAdd);
+            }
+        });
+        b.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent actvAdd = new Intent(EditAllenamento.this, HomeActivity.class);
+                startActivity(actvAdd);
+            }
+        });
+        b.create().show();
     }
 }
