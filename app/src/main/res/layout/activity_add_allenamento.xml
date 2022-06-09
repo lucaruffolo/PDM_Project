@@ -89,16 +89,19 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="409dp"
-        android:layout_height="192dp"
-        android:layout_marginStart="1dp"
+        android:layout_width="410dp"
+        android:layout_height="220dp"
         android:layout_marginTop="48dp"
+        app:cardBackgroundColor="#1A020202"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_Esercizio">
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingTop="10dp">
+            >
 
             <TableRow
                 android:layout_width="match_parent"
@@ -106,38 +109,38 @@
                 android:gravity="center_horizontal">
 
                 <CheckBox
-                    android:id="@+id/cAddominali"
+                    android:id="@+id/cEAddominali"
                     android:layout_width="112dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/checkbox_selection"
                     android:button="@color/white"
                     android:text="Addominali"
-                    android:textSize="18sp"
                     android:textAlignment="center"
+                    android:textSize="18sp"
                     tools:layout_editor_absoluteX="69dp"
                     tools:layout_editor_absoluteY="280dp" />
 
                 <CheckBox
-                    android:id="@+id/cTrapezi"
+                    android:id="@+id/cETrapezi"
                     android:layout_width="112dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/checkbox_selection"
                     android:button="@color/white"
                     android:text="Trapezi"
-                    android:textSize="18sp"
                     android:textAlignment="center"
+                    android:textSize="18sp"
                     tools:layout_editor_absoluteX="69dp"
                     tools:layout_editor_absoluteY="280dp" />
 
                 <CheckBox
-                    android:id="@+id/cCardio"
+                    android:id="@+id/cECardio"
                     android:layout_width="112dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/checkbox_selection"
                     android:button="@color/white"
                     android:text="Cardio"
-                    android:textSize="18sp"
                     android:textAlignment="center"
+                    android:textSize="18sp"
                     tools:layout_editor_absoluteX="69dp"
                     tools:layout_editor_absoluteY="280dp" />
             </TableRow>
@@ -148,38 +151,38 @@
                 android:gravity="center_horizontal">
 
                 <CheckBox
-                    android:id="@+id/cPettorali"
+                    android:id="@+id/cEPettorali"
                     android:layout_width="112dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/checkbox_selection"
                     android:button="@color/white"
                     android:text="Pettorali"
-                    android:textSize="18sp"
                     android:textAlignment="center"
+                    android:textSize="18sp"
                     tools:layout_editor_absoluteX="69dp"
                     tools:layout_editor_absoluteY="280dp" />
 
                 <CheckBox
-                    android:id="@+id/cBicipiti"
+                    android:id="@+id/cEBicipiti"
                     android:layout_width="112dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/checkbox_selection"
                     android:button="@color/white"
                     android:text="Bicipiti"
-                    android:textSize="18sp"
                     android:textAlignment="center"
+                    android:textSize="18sp"
                     tools:layout_editor_absoluteX="69dp"
                     tools:layout_editor_absoluteY="280dp" />
 
                 <CheckBox
-                    android:id="@+id/cTricipiti"
+                    android:id="@+id/cETricipiti"
                     android:layout_width="112dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/checkbox_selection"
                     android:button="@color/white"
                     android:text="Tricipiti"
-                    android:textSize="18sp"
                     android:textAlignment="center"
+                    android:textSize="18sp"
                     tools:layout_editor_absoluteX="69dp"
                     tools:layout_editor_absoluteY="280dp" />
             </TableRow>
@@ -190,38 +193,38 @@
                 android:gravity="center_horizontal">
 
                 <CheckBox
-                    android:id="@+id/cDorsali"
+                    android:id="@+id/cEDorsali"
                     android:layout_width="112dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/checkbox_selection"
                     android:button="@color/white"
                     android:text="Dorsali"
-                    android:textSize="18sp"
                     android:textAlignment="center"
+                    android:textSize="18sp"
                     tools:layout_editor_absoluteX="69dp"
                     tools:layout_editor_absoluteY="280dp" />
 
                 <CheckBox
-                    android:id="@+id/cSpalle"
+                    android:id="@+id/cESpalle"
                     android:layout_width="112dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/checkbox_selection"
                     android:button="@color/white"
                     android:text="Spalle"
-                    android:textSize="18sp"
                     android:textAlignment="center"
+                    android:textSize="18sp"
                     tools:layout_editor_absoluteX="69dp"
                     tools:layout_editor_absoluteY="280dp" />
 
                 <CheckBox
-                    android:id="@+id/cDeltoidi"
+                    android:id="@+id/cEDeltoidi"
                     android:layout_width="112dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/checkbox_selection"
                     android:button="@color/white"
                     android:text="Deltoidi"
-                    android:textSize="18sp"
                     android:textAlignment="center"
+                    android:textSize="18sp"
                     tools:layout_editor_absoluteX="69dp"
                     tools:layout_editor_absoluteY="280dp" />
             </TableRow>
@@ -232,7 +235,7 @@
                 android:gravity="center_horizontal">
 
                 <CheckBox
-                    android:id="@+id/cGambe"
+                    android:id="@+id/cEGambe"
                     android:layout_width="112dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/checkbox_selection"
@@ -244,14 +247,14 @@
                     tools:layout_editor_absoluteY="280dp" />
 
                 <CheckBox
-                    android:id="@+id/cCircuito"
+                    android:id="@+id/cECircuito"
                     android:layout_width="112dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/checkbox_selection"
                     android:button="@color/white"
                     android:text="Circuito"
-                    android:textSize="18sp"
                     android:textAlignment="center"
+                    android:textSize="18sp"
                     tools:layout_editor_absoluteX="69dp"
                     tools:layout_editor_absoluteY="280dp" />
 

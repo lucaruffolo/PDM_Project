@@ -2,13 +2,21 @@ package com.example.pdm_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
+import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class AddAllenamento extends AppCompatActivity {
 
@@ -21,25 +29,49 @@ public class AddAllenamento extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_add_allenamento);
         // load checkbox
-        cAddominali = findViewById(R.id.cAddominali);
-        cTrapezi = findViewById(R.id.cTrapezi);
-        cCardio = findViewById(R.id.cCardio);
-        cPettorali = findViewById(R.id.cPettorali);
-        cBicipiti = findViewById(R.id.cBicipiti);
-        cTricipiti = findViewById(R.id.cTricipiti);
-        cDorsali = findViewById(R.id.cDorsali);
-        cSpalle = findViewById(R.id.cSpalle);
-        cDeltoidi = findViewById(R.id.cDeltoidi);
-        cGambe = findViewById(R.id.cGambe);
-        cCircuito = findViewById(R.id.cCircuito);
+        cAddominali = findViewById(R.id.cEAddominali);
+        cTrapezi = findViewById(R.id.cETrapezi);
+        cCardio = findViewById(R.id.cECardio);
+        cPettorali = findViewById(R.id.cEPettorali);
+        cBicipiti = findViewById(R.id.cEBicipiti);
+        cTricipiti = findViewById(R.id.cETricipiti);
+        cDorsali = findViewById(R.id.cEDorsali);
+        cSpalle = findViewById(R.id.cESpalle);
+        cDeltoidi = findViewById(R.id.cEDeltoidi);
+        cGambe = findViewById(R.id.cEGambe);
+        cCircuito = findViewById(R.id.cECircuito);
         //
         data = findViewById(R.id.input_Data);
         nomeAllenamento = findViewById(R.id.input_NomeAllenamento);
         esercizio = findViewById(R.id.input_Esercizio);
         kgriposo = findViewById(R.id.input_KgRiposo);
         durataAllenamento = findViewById(R.id.input_DurataAllenamento);
+
+        Calendar cal = Calendar.getInstance();
+        final int year = cal.get(Calendar.YEAR);
+        final int month = cal.get(Calendar.MONTH);
+        final int day = cal.get(Calendar.DAY_OF_MONTH);
+
+        data.setInputType(InputType.TYPE_NULL); // disabilita la tastiera al click
+
+        data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatePickerDialog dpd = new DatePickerDialog(AddAllenamento.this, new DatePickerDialog.OnDateSetListener() {
+
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        month = month+1;
+                        String date = day+"/"+month+"/"+year;
+                        data.setText(date);
+                    }
+                },year,month,day);
+                dpd.show();
+            }
+        });
 
         btn_addAllenamento = findViewById(R.id.btn_AddAllenamento);
         btn_addAllenamento.setOnClickListener(new View.OnClickListener() {
