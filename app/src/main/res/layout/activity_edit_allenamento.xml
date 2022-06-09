@@ -10,8 +10,8 @@
         android:id="@+id/input_NomeAllenamento2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="61dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Nome Allenamento"
         android:inputType="textPersonName"
@@ -23,8 +23,8 @@
         android:id="@+id/input_Data2"
         android:layout_width="208dp"
         android:layout_height="48dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Data"
         android:inputType="textPersonName"
@@ -33,23 +33,24 @@
 
     <EditText
         android:id="@+id/input_KgRiposo2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="47dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="199dp"
         android:ems="10"
         android:hint="KG e Riposo"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_Esercizio2" />
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/input_Esercizio2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="56dp"
         android:ems="10"
         android:hint="Esercizi"
         android:inputType="textPersonName"
@@ -59,35 +60,35 @@
 
     <EditText
         android:id="@+id/input_DurataAllenamento2"
-        android:layout_width="wrap_content"
+        android:layout_width="226dp"
         android:layout_height="48dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginBottom="25dp"
         android:ems="10"
         android:hint="Durata Allenamento (MIN)"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_KgRiposo2" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_updateAllenamento"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_updateAllenamento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="133dp"
+        android:layout_width="134dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="138dp"
+        android:layout_marginBottom="4dp"
         android:text="Aggiorna"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_DurataAllenamento2" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_deleteAllenamento"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_deleteAllenamento"
-        android:layout_width="117dp"
+        android:layout_width="105dp"
         android:layout_height="48dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginBottom="16dp"
         android:text="Elimina"
         android:textColor="@color/red"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_updateAllenamento" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

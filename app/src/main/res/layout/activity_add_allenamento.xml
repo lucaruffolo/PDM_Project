@@ -4,33 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C0FDE9"
+    android:background="#EED5D4FD"
     tools:context=".AddAllenamento">
-
-    <EditText
-        android:id="@+id/input_NomeAllenamento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="41dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:hint="Nome Allenamento"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/input_Data"
         android:layout_width="208dp"
         android:layout_height="48dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Data"
+        android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_NomeAllenamento" />
+        app:layout_constraintTop_toBottomOf="@+id/input_NomeAllenamento"
+        tools:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/input_NomeAllenamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Nome Allenamento"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/input_Esercizio"
@@ -39,46 +41,236 @@
         android:layout_marginStart="26dp"
         android:layout_marginTop="17dp"
         android:ems="10"
+        android:hint="Esercizi"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:hint="Esercizi"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_Data" />
 
     <EditText
         android:id="@+id/input_KgRiposo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="19dp"
+        android:layout_width="54dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="12dp"
         android:ems="10"
+        android:hint="KG e Riposo"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:hint="KG e Riposo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_Esercizio" />
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/input_DurataAllenamento"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/input_DurataAllenamento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="21dp"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="52dp"
         android:ems="10"
+        android:hint="Durata Allenamento (MIN)"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:hint="Durata Allenamento (MIN)"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_KgRiposo" />
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btn_AddAllenamento"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
     <Button
         android:id="@+id/btn_AddAllenamento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="152dp"
-        android:layout_marginBottom="125dp"
+        android:layout_width="158dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginBottom="84dp"
         android:text="Aggiungi"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="409dp"
+        android:layout_height="192dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_Esercizio">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <CheckBox
+                    android:id="@+id/cAddominali"
+                    android:layout_width="112dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/checkbox_selection"
+                    android:button="@color/white"
+                    android:text="Addominali"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    tools:layout_editor_absoluteX="69dp"
+                    tools:layout_editor_absoluteY="280dp" />
+
+                <CheckBox
+                    android:id="@+id/cTrapezi"
+                    android:layout_width="112dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/checkbox_selection"
+                    android:button="@color/white"
+                    android:text="Trapezi"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    tools:layout_editor_absoluteX="69dp"
+                    tools:layout_editor_absoluteY="280dp" />
+
+                <CheckBox
+                    android:id="@+id/cCardio"
+                    android:layout_width="112dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/checkbox_selection"
+                    android:button="@color/white"
+                    android:text="Cardio"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    tools:layout_editor_absoluteX="69dp"
+                    tools:layout_editor_absoluteY="280dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <CheckBox
+                    android:id="@+id/cPettorali"
+                    android:layout_width="112dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/checkbox_selection"
+                    android:button="@color/white"
+                    android:text="Pettorali"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    tools:layout_editor_absoluteX="69dp"
+                    tools:layout_editor_absoluteY="280dp" />
+
+                <CheckBox
+                    android:id="@+id/cBicipiti"
+                    android:layout_width="112dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/checkbox_selection"
+                    android:button="@color/white"
+                    android:text="Bicipiti"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    tools:layout_editor_absoluteX="69dp"
+                    tools:layout_editor_absoluteY="280dp" />
+
+                <CheckBox
+                    android:id="@+id/cTricipiti"
+                    android:layout_width="112dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/checkbox_selection"
+                    android:button="@color/white"
+                    android:text="Tricipiti"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    tools:layout_editor_absoluteX="69dp"
+                    tools:layout_editor_absoluteY="280dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <CheckBox
+                    android:id="@+id/cDorsali"
+                    android:layout_width="112dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/checkbox_selection"
+                    android:button="@color/white"
+                    android:text="Dorsali"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    tools:layout_editor_absoluteX="69dp"
+                    tools:layout_editor_absoluteY="280dp" />
+
+                <CheckBox
+                    android:id="@+id/cSpalle"
+                    android:layout_width="112dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/checkbox_selection"
+                    android:button="@color/white"
+                    android:text="Spalle"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    tools:layout_editor_absoluteX="69dp"
+                    tools:layout_editor_absoluteY="280dp" />
+
+                <CheckBox
+                    android:id="@+id/cDeltoidi"
+                    android:layout_width="112dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/checkbox_selection"
+                    android:button="@color/white"
+                    android:text="Deltoidi"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    tools:layout_editor_absoluteX="69dp"
+                    tools:layout_editor_absoluteY="280dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <CheckBox
+                    android:id="@+id/cGambe"
+                    android:layout_width="112dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/checkbox_selection"
+                    android:button="@color/white"
+                    android:text="Gambe"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    tools:layout_editor_absoluteX="69dp"
+                    tools:layout_editor_absoluteY="280dp" />
+
+                <CheckBox
+                    android:id="@+id/cCircuito"
+                    android:layout_width="112dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/checkbox_selection"
+                    android:button="@color/white"
+                    android:text="Circuito"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    tools:layout_editor_absoluteX="69dp"
+                    tools:layout_editor_absoluteY="280dp" />
+
+            </TableRow>
+        </TableLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="403dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="24dp"
+        android:text="Seleziona gli esercizi"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:fontFamily="@font/rationale" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
