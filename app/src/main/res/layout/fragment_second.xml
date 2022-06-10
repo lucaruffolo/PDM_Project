@@ -16,7 +16,7 @@
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="18dp"
-            android:text="Petto + Bicipiti"
+            android:text="Giorno 2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnAllenamentoUno" />
 
@@ -26,7 +26,7 @@
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="60dp"
-            android:text="Dorso + Tricipiti"
+            android:text="Giorno 1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -36,7 +36,7 @@
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="18dp"
-            android:text="Gambe + Deltoidi"
+            android:text="Giorno 3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnAllenamentoDue" />
 
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="4dp"
-            android:text="Preimpostate"
+            android:text="Allenamenti preimpostati:"
             app:layout_constraintBottom_toTopOf="@+id/btnAllenamentoUno"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -67,17 +67,18 @@
             android:layout_height="76dp"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="140dp"
-            android:text="Crea un tuo allenamento"
-            android:textSize="30sp"
+            android:fontFamily="@font/rationale"
+            android:text="Crea il tuo allenamento"
+            android:textSize="43sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btnAddAllenamento"
-            android:layout_width="48dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="52dp"
-            android:layout_marginBottom="80dp"
+            android:layout_width="59dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="88dp"
             android:text="+"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />

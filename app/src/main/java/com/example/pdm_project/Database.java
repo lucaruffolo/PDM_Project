@@ -73,6 +73,17 @@ public class Database extends SQLiteOpenHelper {
         return cursor;
     }
 
+    public Cursor getDataEsercizi(){
+        String query = "SELECT "+ COLUMN_ESERCIZIO +" FROM " + TABLE_NAME ;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
     void updateData(String row_id,String nome, String data, String esercizio, String riposo, String durata){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();

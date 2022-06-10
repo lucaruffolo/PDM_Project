@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/drawable/checkbox_selection.xml" value="0.1685" />
         <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/drawable/ic_home.xml" value="0.2685" />
+        <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/drawable/ic_statistiche.xml" value="0.2145" />
         <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/font/.xml" value="0.2984375" />
         <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/layout/activity_about.xml" value="0.33" />
         <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/layout/activity_add_allenamento.xml" value="0.33" />
@@ -20,8 +21,8 @@
         <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/layout/fragment_first.xml" value="0.13777777777777778" />
         <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/layout/fragment_fourth.xml" value="0.22" />
         <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/layout/fragment_info.xml" value="0.24909420289855072" />
-        <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/layout/fragment_second.xml" value="0.33" />
-        <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/layout/fragment_third.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/layout/fragment_second.xml" value="0.2598187311178248" />
+        <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/layout/fragment_third.xml" value="0.25" />
         <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/layout/my_row.xml" value="0.35833333333333334" />
         <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/layout/switch_item.xml" value="0.24909420289855072" />
         <entry key="..\:/Users/Luca24/AndroidStudioProjects/PDM_Project/app/src/main/res/menu/bottom_menu.xml" value="0.3625" />

@@ -15,23 +15,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class SecondFragment extends Fragment implements View.OnClickListener {
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
     private Button btnUno;
     private Button btnDue;
     private Button btnTre;
     private Button btnAdd;
+    private String currentDate;
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_second, container,         false);
+        currentDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
 
         btnUno = (Button) rootView.findViewById(btnAllenamentoUno);
         btnDue = (Button) rootView.findViewById(btnAllenamentoDue);
@@ -50,16 +55,25 @@ public class SecondFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()){
             case btnAllenamentoUno:
-                Intent actvUno = new Intent(getActivity(), AddAllenamento.class);
-                startActivity(actvUno);
+                MainActivity.db.addAllenamento(currentDate,
+                        "Giorno 1",
+                        "Cardio-Dorsali-Tricipiti",
+                        "0",
+                        40);
                 break;
             case btnAllenamentoDue:
-                Intent actvDue = new Intent(getActivity(), AddAllenamento.class);
-                startActivity(actvDue);
+                MainActivity.db.addAllenamento(currentDate,
+                        "Giorno 2",
+                        "Bicipiti-Pettorali",
+                        "0",
+                        40);
                 break;
             case btnAllenamentoTre:
-                Intent actvTre = new Intent(getActivity(), AddAllenamento.class);
-                startActivity(actvTre);
+                MainActivity.db.addAllenamento(currentDate,
+                        "Giorno 3",
+                        "Gambe-Spalle-Addominali",
+                        "0",
+                        40);
                 break;
             case btnAddAllenamento:
                 Intent actvAdd = new Intent(getActivity(), AddAllenamento.class);

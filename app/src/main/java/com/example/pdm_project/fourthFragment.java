@@ -16,6 +16,8 @@ import android.media.AudioManager;
 import android.media.ToneGenerator;
 import android.os.Bundle;
 
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
 import android.os.CountDownTimer;
@@ -132,6 +134,7 @@ public class fourthFragment extends Fragment implements View.OnClickListener {
 
             @Override
             public void onFinish() {
+
                 reStartTimer();
                 Animation anim = new AlphaAnimation(0.0f, 1.0f);
                 anim.setDuration(50); //You can manage the blinking time with this parameter
