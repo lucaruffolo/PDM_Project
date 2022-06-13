@@ -65,7 +65,20 @@ public class AddAllenamento extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                         month = month+1;
-                        String date = day+"/"+month+"/"+year;
+                        String sm = "0";
+                        String dayz = "0";
+                        if (day >0 && day < 10){
+                            dayz = dayz + day;
+                        }else{
+                            dayz = Integer.toString(day);
+                        }
+
+                        if (month >= 1 && month < 10) {
+                            sm = sm + month;
+                        }else{
+                            sm = Integer.toString(month);
+                        }
+                        String date = dayz+"/"+sm+"/"+year;
                         data.setText(date);
                     }
                 },year,month,day);
