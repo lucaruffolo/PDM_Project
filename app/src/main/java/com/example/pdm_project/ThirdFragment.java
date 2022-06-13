@@ -30,7 +30,6 @@ public class ThirdFragment extends Fragment {
 
     private int Addominali = 0,Trapezi = 0, Cardio = 0, Pettorali = 0, Bicipiti = 0, Tricipiti = 0,
             Dorsali = 0, Spalle = 0, Deltoidi = 0, Gambe = 0, Circuito = 0;
-    private TextView txt;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,15 +50,23 @@ public class ThirdFragment extends Fragment {
         pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         pieDataSet.setValueTextColor(Color.BLACK);
         pieDataSet.setValueTextSize(20f);
+        pieDataSet.setSliceSpace(2.0f);
 
         PieData pied = new PieData(pieDataSet);
         chart.setData(pied);
         chart.setCenterText("%");
-        chart.setCenterTextColor(Color.BLACK);
+
+        if (HomeActivity.NIGHT_MODE == true) {
+            chart.setCenterTextColor(Color.WHITE);
+            chart.setHoleColor(Color.BLACK);
+        }else {
+            chart.setHoleColor(Color.WHITE);
+            chart.setCenterTextColor(Color.BLACK);
+        }
         chart.setCenterTextSize(40f);
         chart.setUsePercentValues(true);
         chart.getDescription().setEnabled(false);
-        //  chart.setCenterText("wewe");
+        chart.getLegend().setEnabled(false);
         chart.animate();
 
 

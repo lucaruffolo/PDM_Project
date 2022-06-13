@@ -2,8 +2,10 @@ package com.example.pdm_project;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.media.Image;
 import android.os.Bundle;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,21 +14,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import java.util.ArrayList;
 
 public class FirstFragment extends Fragment {
 
-    private TableLayout table;
-    private TableRow row;
-    private LinearLayout mll;
-    private ScrollView sv;
-
+    private ViewFlipper vflipper;
     private RecyclerView rv;
     private CustomAdapter ca;
     public static ArrayList<String> array_id;
@@ -48,10 +48,28 @@ public class FirstFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_first, container, false);
 
-        loadData(view);
+        vflipper = view.findViewById(R.id.flipper);
+        int images[] = {R.drawable.img_1,R.drawable.img_2,R.drawable.img_3,R.drawable.img_4,R.drawable.img_5,R.drawable.img_6};
+        for (int i :images){
+            loadImages(i);
+        }
 
+        loadData(view);
         return view;
     }
+
+    public void loadImages(int image){
+        ImageView imgv = new ImageView(getContext());
+        imgv.setBackgroundResource(image);
+
+        vflipper.addView(imgv);
+        vflipper.setFlipInterval(4000);
+        vflipper.setAutoStart(true);
+
+        vflipper.setInAnimation(getContext(), android.R.anim.slide_in_left);
+        vflipper.setOutAnimation(getContext(), android.R.anim.slide_out_right);
+    }
+
     public void loadData(View view){
         rv = (RecyclerView) view.findViewById(R.id.RecyclerView);
         array_id = new ArrayList<>();
@@ -62,7 +80,7 @@ public class FirstFragment extends Fragment {
         array_DurataAllenamento = new ArrayList<>();
 
         storeDataInArrays();
-        Toast.makeText(view.getContext(), "Caricato " + array_id.size() + " Allenamenti", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(view.getContext(), "Caricato " + array_id.size() + " Allenamenti", Toast.LENGTH_SHORT).show();
 
         ca = new CustomAdapter(getContext(),array_id, array_nomeAllenamento,array_dataAllenamento,array_esercizioAllenamento,array_kgRiposoAllenamento,array_DurataAllenamento);
         rv.setAdapter(ca);

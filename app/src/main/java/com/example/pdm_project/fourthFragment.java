@@ -7,6 +7,7 @@ import static com.example.pdm_project.R.id.btnTimerStart;
 import static com.example.pdm_project.R.id.inputTimer;
 import static com.example.pdm_project.R.id.textCrono;
 import static com.example.pdm_project.R.id.textImpostaTimer;
+import static com.example.pdm_project.R.id.textLabelCronometro;
 import static com.example.pdm_project.R.id.textLabelTimer;
 import static com.example.pdm_project.R.id.textTimer;
 import static com.example.pdm_project.R.id.textView;
@@ -43,7 +44,7 @@ public class fourthFragment extends Fragment implements View.OnClickListener {
 
     // === Timer
     private TextView timerTextView;
-    private TextView textlblTimer;
+    private TextView labelTimer;
     private Button btnStartTimer;
     private Button resetTimer;
     private boolean timerStart = false;
@@ -56,6 +57,7 @@ public class fourthFragment extends Fragment implements View.OnClickListener {
 
     // === Cronometro
     private TextView cronoTextView;
+    private TextView labelCronometro;
     private Button btnStartCrono;
     private Button resetCrono;
     private boolean cronoStart = false;
@@ -73,7 +75,7 @@ public class fourthFragment extends Fragment implements View.OnClickListener {
         timerTextView = (TextView) rootView.findViewById(textTimer);
         btnStartTimer = (Button) rootView.findViewById(btnTimerStart);
         resetTimer = (Button) rootView.findViewById(btnTimerReset);
-        textlblTimer = (TextView) rootView.findViewById(textLabelTimer);
+        labelTimer = (TextView) rootView.findViewById(textLabelTimer);
         textImpostaTimerz = (TextView) rootView.findViewById(textImpostaTimer);
 
         cronometro = (Chronometer) rootView.findViewById(textCrono);
@@ -87,8 +89,15 @@ public class fourthFragment extends Fragment implements View.OnClickListener {
 
         inputTimers = (TextInputLayout) rootView.findViewById(inputTimer);
 
-
-
+        labelCronometro = (TextView) rootView.findViewById(textLabelCronometro);
+        labelTimer = (TextView) rootView.findViewById(textLabelTimer);
+        if (HomeActivity.NIGHT_MODE == true) {
+            labelCronometro.setBackgroundColor(Color.DKGRAY);
+            labelTimer.setBackgroundColor(Color.DKGRAY);
+        }else{
+            labelCronometro.setBackgroundColor(Color.LTGRAY);
+            labelTimer.setBackgroundColor(Color.LTGRAY);
+        }
 
       //  return inflater.inflate(R.layout.fragment_fourth, container, false);
         return rootView;
@@ -141,7 +150,7 @@ public class fourthFragment extends Fragment implements View.OnClickListener {
                 anim.setStartOffset(20);
                 anim.setRepeatMode(Animation.REVERSE);
                 anim.setRepeatCount(25);
-                textlblTimer.startAnimation(anim);
+                labelTimer.startAnimation(anim);
                 timerTextView.startAnimation(anim);
                 ToneGenerator toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
                 toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP,1000);
