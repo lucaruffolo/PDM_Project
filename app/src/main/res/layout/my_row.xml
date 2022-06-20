@@ -31,7 +31,6 @@
                 android:layout_width="136dp"
                 android:layout_height="35dp"
                 android:text="data"
-                android:textColor="@color/black"
                 android:textSize="23sp"
                 app:layout_constraintStart_toEndOf="@+id/home_ViewIdAllenamento"
                 app:layout_constraintTop_toTopOf="parent"

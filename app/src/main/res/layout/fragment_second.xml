@@ -16,7 +16,7 @@
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="18dp"
-            android:text="Giorno 2"
+            android:text="Giorno 2 [Pettorali - Bicipiti]"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnAllenamentoUno" />
 
@@ -26,7 +26,7 @@
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="60dp"
-            android:text="Giorno 1"
+            android:text="Giorno 1 [Cardio - Tricipiti - Dorsali]"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -36,7 +36,7 @@
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="18dp"
-            android:text="Giorno 3"
+            android:text="Giorno 3 [Addominali - Spalle - Gambe]"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnAllenamentoDue" />
 
@@ -44,6 +44,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#00A189"
             android:fontFamily="@font/rationale"
             android:text="Schede"
             android:textAlignment="center"

@@ -15,6 +15,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#B6A500"
             android:fontFamily="@font/rationale"
             android:text="Statistiche"
             android:textAlignment="center"
