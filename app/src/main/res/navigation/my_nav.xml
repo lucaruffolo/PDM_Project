@@ -17,12 +17,13 @@
         tools:layout="@layout/fragment_second" />
     <fragment
         android:id="@+id/thirdFragment"
-        android:name="com.example.pdm_project.thirdFragment"
+        android:name="com.example.pdm_project.ThirdFragment"
         android:label="Statistiche"
         tools:layout="@layout/fragment_third" />
     <fragment
-        android:id="@+id/infoFragment"
-        android:name="com.example.pdm_project.InfoFragment"
-        android:label="fragment_info"
-        tools:layout="@layout/fragment_info" />
+        android:id="@+id/fourthFragment"
+        android:name="com.example.pdm_project.fourthFragment"
+        android:label="Timer"
+        tools:layout="@layout/fragment_fourth" />
+
 </navigation>

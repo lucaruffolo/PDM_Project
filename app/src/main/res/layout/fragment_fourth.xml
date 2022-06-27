@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fourthFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnCronoReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="144dp"
+            android:text="Reset"
+            android:textColor="#FB3131"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/textLabelTimer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#C8C8C8"
+            android:fontFamily="@font/rationale"
+            android:text="Timer"
+            android:textAlignment="center"
+            android:textSize="60sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textLabelCronometro"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="28dp"
+            android:background="#C8C8C8"
+            android:fontFamily="@font/rationale"
+            android:text="Cronometro"
+            android:textAlignment="center"
+            android:textSize="60sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnTimerReset" />
+
+        <Button
+            android:id="@+id/btnTimerReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="48dp"
+            android:text="Reset"
+            android:textColor="#FB3131"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputTimer" />
+
+        <Button
+            android:id="@+id/btnTimerStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="48dp"
+            android:text="Start"
+            android:textColor="#6BFF00"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTimer" />
+
+        <TextView
+            android:id="@+id/textTimer"
+            android:layout_width="199dp"
+            android:layout_height="97dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="39dp"
+            android:layout_marginBottom="76dp"
+            android:text="01:00"
+            android:textColor="@color/blue"
+            android:textSize="70sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnTimerReset"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textLabelTimer"
+            app:layout_constraintVertical_bias="0.0"
+            tools:textAlignment="center" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputTimer"
+            android:layout_width="108dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="288dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textLabelTimer">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiet"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:hint="Es: 01:30"
+                android:textAlignment="center" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Chronometer
+            android:id="@+id/textCrono"
+            android:layout_width="203dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="106dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="106dp"
+            android:fontFamily="@font/rationale"
+            android:textColor="@color/blue"
+            android:textSize="70sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textLabelCronometro"
+            tools:textAlignment="center" />
+
+        <Button
+            android:id="@+id/btnCronoStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginBottom="144dp"
+            android:text="Start"
+            android:textColor="#6BFF00"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textImpostaTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/rationale"
+            android:text="Imposta timer"
+            android:textColor="#41098F"
+            app:layout_constraintBottom_toTopOf="@+id/inputTimer"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
