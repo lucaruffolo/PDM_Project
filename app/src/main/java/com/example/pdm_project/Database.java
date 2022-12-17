@@ -63,7 +63,7 @@ public class Database extends SQLiteOpenHelper {
 
 
     Cursor readAllData(){
-        String query = "SELECT * FROM " + TABLE_NAME + " ORDER BY "+ COLUMN_DATA + " DESC";
+        String query = "SELECT * FROM " + TABLE_NAME + " ORDER BY "+ COLUMN_ID + " DESC";
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = null;
