@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.media.Image;
 import android.os.Bundle;
-
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -95,7 +97,8 @@ public class FirstFragment extends Fragment {
         }else{
             while (cursor.moveToNext()){
                 array_id.add(cursor.getString(0));
-                array_dataAllenamento.add(cursor.getString(1));
+                String outputDate = convertDateFormat(cursor.getString(1), "yyyyMMdd", "dd/MM/yyyy");
+                array_dataAllenamento.add(outputDate);
                 array_nomeAllenamento.add(cursor.getString(2));
                 array_esercizioAllenamento.add(cursor.getString(3));
                 array_kgRiposoAllenamento.add(cursor.getString(4));
@@ -103,5 +106,23 @@ public class FirstFragment extends Fragment {
             }
         }
     }
+    public static String convertDateFormat(String inputDate, String inputFormat, String outputFormat) {
+        String outputDate = "";
 
+        try {
+            // Definisci il formato di input e di output
+            SimpleDateFormat inputDateFormat = new SimpleDateFormat(inputFormat);
+            SimpleDateFormat outputDateFormat = new SimpleDateFormat(outputFormat);
+
+            // Parsa la data di input
+            Date date = inputDateFormat.parse(inputDate);
+
+            // Formatta la data nel nuovo formato
+            outputDate = outputDateFormat.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return outputDate;
+    }
 }

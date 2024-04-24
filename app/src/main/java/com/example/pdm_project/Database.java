@@ -5,9 +5,13 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Database extends SQLiteOpenHelper {
     private Context context;
@@ -47,7 +51,13 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
-        cv.put(COLUMN_DATA, data);
+        //Log.d("MainActivity", data);
+
+        String convertDate = convertDateFormat(data);
+
+        //Log.d("MainActivity", outputDate);
+
+        cv.put(COLUMN_DATA, convertDate);
         cv.put(COLUMN_NOME_ALLENAMENTO,nomeAllenamento);
         cv.put(COLUMN_ESERCIZIO,esercizio);
         cv.put(COLUMN_PESO_RIPOSO,pesoRiposo);
@@ -114,6 +124,25 @@ public class Database extends SQLiteOpenHelper {
     void deleteAllData(){
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_NAME);
+    }
+    public static String convertDateFormat(String inputDate) {
+        String outputDate = "";
+
+        try {
+            // Definisci il formato di input e di output
+            SimpleDateFormat inputFormat = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat outputFormat = new SimpleDateFormat("yyyyMMdd");
+
+            // Parsa la data di input
+            Date date = inputFormat.parse(inputDate);
+
+            // Formatta la data nel nuovo formato
+            outputDate = outputFormat.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return outputDate;
     }
 }
 
